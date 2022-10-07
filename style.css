@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+
+  background: linear-gradient(179.34deg, #fa5901 7%, #eb005c 95.34%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo {
+  fill-opacity: 0;
+  stroke-width: 3px;
+  stroke: #fff;
+  stroke-dashoffset: 3000;
+  stroke-dasharray: 3000;
+  animation: aparecer 10s ease-in-out forwards alternate infinite;
+
+  transform: scale(0.9);
+  transform-origin: center;
+}
+
+@keyframes aparecer {
+  0% {
+    fill-opacity: 0;
+    stroke-dashoffset: 3000;
+  }
+  70% {
+    fill-opacity: 0;
+    stroke-dashoffset: 0;
+
+    filter: drop-shadow(0 0 0 rgba(247, 247, 247, 0))
+      drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+  }
+  100% {
+    fill-opacity: 1;
+    stroke-dashoffset: 0;
+
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.2));
+  }
+}
+
+#engrenagem {
+  animation: engrenagemGirar 30s ease-in-out 10s forwards infinite;
+
+  transform-origin: center;
+  transform: scale(0.9) rotate(0deg);
+}
+
+@keyframes engrenagemGirar {
+  0% {
+    transform: scale(0.9) rotate(0deg);
+  }
+  100% {
+    transform: scale(0.9) rotate(-90deg);
+  }
+}
+
+svg {
+  width: 100%;
+  height: 100vh;
+  padding: 5rem;
+}
